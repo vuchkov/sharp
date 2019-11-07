@@ -67,6 +67,13 @@ matrix:
         - sudo docker exec sharp apk add build-base git python2 --update-cache
       install: sudo docker exec sharp sh -c "npm install --unsafe-perm"
       script: sudo docker exec sharp sh -c "npm test"
+    - name: "Linux ARM64v8 (glibc) - Node 12"
+      arch: arm64
+      os: linux
+      dist: xenial
+      sudo: false
+      language: node_js
+      node_js: "12"
     - name: "OS X - Node 8"
       os: osx
       osx_image: xcode9.2
